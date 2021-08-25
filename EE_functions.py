@@ -77,11 +77,11 @@ def Y_bus(top,shunt_bus):#Construct Ybus
 def res_matrix(std_dev,num_meas,type): #Construct R matrix
 
     R = np.mat(np.zeros((num_meas,num_meas)))
-    if type ==1:
+    if type ==1:#the data is the variance
         for i in range(num_meas):
             R[i,i] = std_dev[i]
     
-    if type ==0:
+    if type ==0:#the data is the std
         for i in range(num_meas):
             R[i,i] = (std_dev[i])**2
 
@@ -361,9 +361,9 @@ def  evalue_state(x_k,Ybus,std_dev,meas,num_states,num_meas,R,teta,V,num_bus,z,s
     H =jacobian(x_k,Ybus,meas,num_states,num_meas,teta,V,num_bus,shunt_line,t,brt)
     #Gain Matrix
     # G = ((H.transpose()).dot((np.linalg.inv(R)))).dot(H)
-    G= np.transpose(H)@(np.linalg.inv(R)@H)
+    G= np.transpose(H)@(np.linalg.inv(R)@H) # -> G(xk)
     # delta_x= (((np.linalg.inv(G)).dot((H.transpose()))).dot((np.linalg.inv(R)))).dot(np.subtract(z,h))
-    r=z-np.transpose(h) #residual
+    r=z-np.transpose(h) #residual-> z- h(x)
     r=np.transpose(r)
     delta_x = np.linalg.inv(G)@(np.transpose(H)@np.linalg.inv(R))@(r)
     delta_x=delta_x.tolist()

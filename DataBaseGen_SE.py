@@ -6,18 +6,7 @@ import matplotlib.pyplot as plt
 from itertools import chain
 import pandas as pd
 from EE_functions import *
-# from main import R
-#Legend- Measurements
-#1 = Active Injection
-#2 = Reactive Injection
-#3 = Active Power Flow
-#4 = Reactive Power Flow
-#5 = Current(Real)
-#6 = Current(Imaginary)
-#7 = Voltage Magnitude
-#8 = Voltage Angle
-# from | t | type | meas. value | std.dev
-#______________________________________________________________________________________________________________________________________
+
 #-----------------------------------------------------------------State Estimation--------------------------------------------------------------
 def SE():
 
@@ -32,7 +21,9 @@ def SE():
     num_meas_base = len(data['tipo'].tolist())
     total_meas = int(num_meas_base*2)
     #Iterative Construction of Database
-    month=['jan', 'fev', 'mar', 'abril','maio','jun','jul','agost','set','out','nov','dez']
+    # month=['jan', 'fev', 'mar', 'abril','maio','jun','jul','agost','set','out','nov','dez']
+    month=['maio']
+    #teste de 1 mês
     year=['2019']
     caso=['14Bus_Base']
     num_months= len(month)
@@ -83,12 +74,12 @@ def SE():
                                 x_k[k] = x_k[k] + delta_x[k-1]
                             teta = x_k[0:numbus]#refresh angle's values but not the reference bus
                             V = x_k[numbus:2*numbus]#refresh voltage's values
-                    # print("Módulo das Tensões \n")
-                    # print(V)
-                    # print('\n')
-                    # print("Ângulos(°) \n")
-                    #teta=[(teta[i]*180)/m.pi for i in range(numbus)]
-                    # print(teta)
+                    print("Módulo das Tensões \n")
+                    print(V)
+                    print('\n')
+                    print("Ângulos(°) \n")
+                    teta=[(teta[i]*180)/m.pi for i in range(numbus)]
+                    print(teta)
                 ###############Plotting J(x)################
                     # plt.plot(list(range(iter)), Ji)
                     # plt.xlabel('Iterations')
