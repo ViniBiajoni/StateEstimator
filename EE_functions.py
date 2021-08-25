@@ -379,7 +379,7 @@ def SE():
     # Read Parameters and Measurements  Files
     #meas,top,shunt = lt.leitura('measurements_14_validation.txt','Parametros\IEEE14bus_cdf.txt','Parametros\IEEE14shunt_bus_cdf.txt')
     #meas,top,shunt = lt.leitura('testePETAbur.txt','Parametros\IEEE14bus_cdf.txt','Parametros\IEEE14shunt_bus_cdf.txt')
-    meas,top,shunt = lt.leitura('julioEE_adapted.txt','Parametros\IEEE14bus_sTap.txt','Parametros\IEEE14shunt_bus_cdf.txt')
+    meas,top,shunt = lt.leitura('julioEE_adapted.txt','Parametros\IEEE14bus_sTap.txt','Parametros\IEEE14_sem_shunt_bus_cdf.txt')
     z= meas[:,3]
     std_dev = meas[:,4] 
     # Residual matrix
