@@ -15,7 +15,7 @@ from itertools import chain
 #7 = Voltage Magnitude
 #8 = Voltage Angle
 # from | t | type | meas. value | std.dev
-#############This file has all necessary function for the SE######################
+#############This file has all necessary function for the SE###################### TESTETESTE
 #______________________________________________________________________________________________________________________________________
 def Y_bus(top,shunt_bus):#Construct Ybus
 
