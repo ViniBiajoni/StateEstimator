@@ -40,6 +40,7 @@ def SE():
                 for i in range(total_loops):
                     #Obtain the meas for the instant i
                     meas= meas_month[inicio:fim,0:5] #do not use the colums 6 and 7
+                    meas = lt.sort_meas_type(meas)
                     ##################################                
                     z= meas[:,3]
                     std_dev = meas[:,4] 
