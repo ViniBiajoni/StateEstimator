@@ -4,6 +4,7 @@ import leitura as lt
 import math as m
 import matplotlib.pyplot as plt
 from itertools import chain
+from EE_functions import *
 # from main import R
 #Legend- Measurements
 #1 = Active Injection
