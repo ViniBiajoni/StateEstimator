@@ -31,9 +31,11 @@ def sort_meas_type(meas):
     for i in range(num_meas):
         meas[i,2] = dict_sort_meds[meas[i,2]]
     #Ordena de Acordo com Abur Cap 2
-    meas = np.sort(meas.view('i8,i8,i8'), order=['f2'], axis=0).view(np.int)
-    #Reescreve as numeracoes Originais das Medidas
+    ind = np.lexsort((meas[:,1],meas[:,0],meas[:,2]))
+    meas = meas[ind]
+    # meas = meas[meas[:,2].argsort()] #ordena o arquivo das medias pela coluna 3 "tipo"
+    #Reescreve as numeracoes Originais das Medidas para o programa de EE
     for k in range(num_meas):
-        meas[i,2] = dict_sort_reverse[meas[i,2]]
+        meas[k,2] = dict_sort_reverse[meas[k,2]]
 
     return meas
