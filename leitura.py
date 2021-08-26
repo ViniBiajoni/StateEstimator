@@ -19,8 +19,8 @@ def leitura_meas_database(m,y,c):
     # caso=['14Bus_Base']
     caso=['14Bus_CasoBase']
     # file= 'Medidas\int_5-5min\Medidas_ieee_' + m + '_' + year[y] + '_' + caso[c] + 'SE.txt'
-    file= 'Medidas\int_5-5min\Medidas_ieee_' + m + '_' + year[y] + '_' + caso[c] + 'SESTD_artigo.txt'
-    # file= 'Medidas\int_5-5min\Medidas_ieee_' + m + '_' + year[y] + '_' + caso[c] + 'SEunitarioSTD.txt'
+    file= 'Medidas\int_5-5min_std_artigo\Medidas_ieee_' + m + '_' + year[y] + '_' + caso[c] + 'SESTD_artigo.txt'
+    # file= 'Medidas\int_5-5min_unitario\Medidas_ieee_' + m + '_' + year[y] + '_' + caso[c] + 'SEunitarioSTD.txt'
     meas = np.loadtxt(file,dtype = np.float64)
 
 def sort_meas_type(meas):
