@@ -21,17 +21,17 @@ def SE():
     num_meas_base = len(data['tipo'].tolist())
     total_meas = int(num_meas_base*2)
     #Iterative Construction of Database
-    # month=['jan', 'fev', 'mar', 'abril','maio','jun','jul','agost','set','out','nov','dez']
-    month=['maio']
+    # months=['jan', 'fev', 'mar', 'abril','maio','jun','jul','agost','set','out','nov','dez']
+    months=['maio']
     #teste de 1 mês
     year=['2019']
     caso=['14Bus_Base']
-    num_months= len(month)
+    num_months= len(months)
     num_years= len(year)
     num_cases= len(caso)
     for c in range(num_cases):
         for y in range(num_years):
-            for m in range(num_months):
+            for m in months:
                 meas_month = lt.leitura_meas_database(m,y,c) #catch all the mensal intervals
                 #DEFINIR O NUM MAX DE INSTANTES
                 total_loops = int(len(meas_month[:,0])/total_meas) #Obtain the number of instants per month
